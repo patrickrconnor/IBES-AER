@@ -29,10 +29,20 @@ jobs:
       - name: Build site
         run: pnpm run build        # puts files in dist/
 
-      - name: Upload artifact
+      - name: Archive build output
+        uses: actions/upload-artifact@v4
+        with:
+          name: github-pages
+          path: web/dist
+          if-no-files-found: error
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload pages artifact
         uses: actions/upload-pages-artifact@v2
         with:
-          path: web/dist           # Keep the full path since this action runs from root
+          path: web/dist
 
   deploy:
     needs: build
