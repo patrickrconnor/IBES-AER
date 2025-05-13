@@ -3,10 +3,25 @@
   import { marked } from 'marked';
 
   let activeTab = 'about';
+  let isEditing = false;
+
+  // Configure marked options
+  marked.use({
+    gfm: true,
+    breaks: true
+  });
+
+  function setActiveTab(tab) {
+    activeTab = tab;
+  }
+
+  function toggleEdit() {
+    isEditing = !isEditing;
+  }
+
   let markdownContent = `Bears on the Ground:   
 **Aviation Emissions Reduction Framework for Academic and Research Expeditions (AERFARE)**
 ![Screenshot 2025-05-13 at 10.32.25 AM](https://hackmd.io/_uploads/SJ5-O0lble.png)
-
 
 ## **1: Introduction to AERFARE**
 
@@ -37,29 +52,179 @@ Opting for virtual attendance helps avoid emissions entirely— unlike offsettin
 
 To put that in perspective using EPA emissions estimates: **just one international trip emits roughly as much CO₂** **as providing electricity to an average American home for 6 months**.
 
-[... rest of the markdown content ...]`;  // Note: I'm truncating this in the example but you should include the full content
+### **Equity and Inclusion Benefits**
 
-  let isEditing = false;
+Encouraging virtual attendance also supports faculty who face barriers to frequent travel— whether due to caregiving responsibilities, health constraints, or lack of visa access. Studies show that virtual conferences increase participation from early-career researchers, women, and scholars from underrepresented regions.[^1] By normalizing virtual alternatives, IBES promotes an academic culture rooted in equity, accessibility, and sustainability.
 
-  function setActiveTab(tab) {
-    activeTab = tab;
-  }
+### **"Opt Out" When Reasonable**
 
-  function toggleEdit() {
-    isEditing = !isEditing;
-  }
+Faculty are encouraged to assess whether physical attendance is truly necessary. In cases where the professional benefits of a trip can be achieved virtually, we recommend formally requesting to attend remotely. Some funding agencies and conference organizers may still default to in-person expectations, but many are increasingly flexible if asked.
 
-  // Configure marked options for better table support
-  marked.use({
-    gfm: true,
-    breaks: true,
-    headerIds: true
-  });
+Here is a sample email template to request virtual participation:
+
+**Subject:** Request for Virtual Participation in \[Conference Name\]
+
+Dear \[Organizer's Name\],
+
+I am honored to have been invited to \[present/attend\] \[Conference/Event Name\]. I'm currently working with Brown University's Institute at Brown for Environment and Society (IBES) to reduce academic aviation emissions, as the department is trying to minimize unnecessary flights where virtual participation is possible. As part of this initiative, I've pledged to minimize flight-related carbon emissions wherever feasible.
+
+In support of this commitment, I'm reaching out to ask whether remote participation would be possible for \[presentation/session\]. I would be glad to engage fully via \[Zoom/Teams/etc.\] and ensure that my contribution maintains the same level of quality and collaboration as in-person attendance.
+
+*(Optional: If a virtual alternative is not available, I may need to reconsider my participation.)*
+
+Thank you for considering this request, and for any flexibility you can offer.
+
+Warm regards,  
+ \[Your Name\]  
+ \[Your Title/Position\]  
+ Institute at Brown for Environment and Society
+
+## **3: Short-haul Flight Alternatives**
+
+Short-haul flights— typically defined as flights under 500 miles— are among the most carbon-intensive forms of travel per mile. That's because takeoff and landing, the most fuel-consuming parts of a flight, dominate these brief routes. Flying from Providence to Philadelphia or Washington, D.C. may save time in the air, but the environmental cost is disproportionately high.
+
+Alternative ground transport is a good emissions reduction strategy for East Coast travel. However, alternatives are not necessarily lower-emissions than flights. Calculating emissions for travel by car is especially dependent on the model, fuel mileage, and number of passengers. Here is a comparison for a **300-mile round trip** between Providence (PVD) and NYC for 1 passenger[^2]:
+
+| Transportation Method | Emissions | Emissions reduced compared to flying |
+| :---- | :---- | :---- |
+| **Flight** | 132 lbs CO2 | N/A |
+| **Train (Amtrak)** | 44 lbs CO2 | 88 lbs CO2 |
+| **Bus (Coach)** | 110 lbs CO2 | 22 lbs CO2 |
+| **Average Passenger Vehicle** | 154 lbs CO2 | \-22 lbs CO2 (*See Note*) |
+
+As you can see, across multiple short trips each year, choosing ground alternatives can easily reduce **hundreds of pounds of emissions per person**. For faculty flying multiple times a semester, these savings scale quickly.
+
+NOTE: Passenger vehicles, on average, can often emit more CO2  per mile than a flight if driving alone. However, carpooling with even 1 other person to a work-related event can drastically reduce your emissions. Using the PVD → NYC round-trip example, **carpooling with 1 other person would reduce 55 lbs CO2 (per person) compared to flying**.
+
+Consider booking your travel with [Amtrak](https://www.amtrak.com/home.html), [Peter Pan Bus Lines](https://peterpanbus.com/), or [Greyhound](https://www.greyhound.com/). These companies provide travel from Providence to over a hundred destinations across the East Coast, often at much lower prices than short-haul flights.
+
+## 
+
+## **4: Carbon Offsetting**
+
+Even when travel is necessary, the environmental impact doesn't have to go unchecked. Carbon offsetting allows individuals or institutions to invest in projects that reduce or remove greenhouse gases from the atmosphere—compensating for emissions from flights or other activities.
+
+### **What Is Carbon Offsetting?**
+
+When you buy an offset credit, you're funding a project— such as forest conservation, clean cookstoves, or renewable energy— that avoids or removes a certain amount of CO₂. Typically, **1 offset \= 1 ton of CO₂ reduced or avoided.**
+
+Offsets don't erase the emissions from flying, but they can neutralize their net climate impact when applied responsibly. To be effective, offsets must be verified by a reputable third party and demonstrate additionality. That is, the reductions wouldn't have occurred without the offset funding.
+
+**Personal Offsetting Options**
+
+Below are three trusted offset services that meet strong verification standards (Gold Standard, VCS, ICROA):
+
+| Provider | Key Features | Website |
+| :---- | :---- | :---- |
+| Climate Impact Partners | Verified projects; choose from reforestation, energy access, and more | [store.climateimpact.com](http://store.climateimpact.com)  |
+| Climate Trade | In-platform calculator; customizable offset projects across the globe | [market.climatetrade.com](http://market.climatetrade.com)  |
+| Wren | Subscription or one-time offset plans; portfolio-based, lifestyle calculator | [wren.co](http://wren.co)  |
+
+**Cost of Purchasing Offsets**
+
+Below are average offset costs by flight type from each of these resources. Note that one metric tonne of carbon accounts for one carbon credit. The calculation emissions for each category represent the selected routes below calculated by CarbonFootprint.com's flight calculator using economy seating and including radiative forcing: 
+
+* **Short-Haul**  
+  * Providence ⇄ New York: \~300 miles round trip \= 132 lbs CO₂  
+* **Domestic**  
+  * Providence ⇄ Chicago: \~1,600 miles round trip \= 794 lbs CO₂  
+* **International**  
+  * Providence ⇄ London: \~5,000 miles round trip \= 4695 lbs CO₂
+
+|  | Average Cost of Offsetting 1 Round-Trip |  |  |
+| :---- | ----- | :---- | :---- |
+| **Flight Category** | **Climate Impact Partners** | **Climate Trade** | **Wren** |
+| **Short-Haul** | $0.50 \- $1.50 | $0.50 \- $24.00 | $1.70 \- $4.90 |
+| **Domestic** | $2.30 \- $9.00 | $2.50 \- $140.00 | $9.90 \- $16.00 |
+| **International** | $13.20 \- $53.00 | $15.00 \- $850.00 | $58.70- $92.00 |
+
+## **5: Unavoidable Flights and Pledges**
+
+For academic travel that is truly essential, there are still ways to minimize the climate impact of flights when they can't be avoided.
+
+**Tips for Lower-Emission Flying**  
+If you must fly, the following practices can significantly reduce the carbon footprint of your trip:
+
+- **Fly Economy Class**
+
+  Business class can emit up to 3x more CO₂ emissions per passenger than economy. This is primarily because business class seats occupy more space and are heavier, reducing the total number of passengers an aircraft can carry. Consequently, the aircraft's emissions are distributed among fewer individuals, increasing the per-passenger carbon footprint.
+
+- **Choose Non-Stop Flights When Possible**
+
+  Takeoff and landing are the most fuel-intensive parts of a flight. Direct flights usually emit less than multi-leg itineraries. 
+
+  For example, Boston ⇄ Paris round trip: 
+
+  Non-stop trip emits 3,284 lbs CO2
+
+  Multi-leg trip (stop in London) emits over 4,000 lbs CO2 
+
+  By booking all your trips non-stop, you can reduce 100s of lbs of CO2 from your travel footprint.
+
+- **Use Lower-Emission Airlines**
+
+  Some airlines prioritize newer, fuel-efficient aircraft, sustainable aviation fuels (SAFs), and offset programs. You can check airline sustainability rankings through tools like [Atmosfair Airline Index](https://www.atmosfair.de/wp-content/uploads/atmosfair-aai2024-ranking-background-final.pdf).[^3] Some of the notably sustainable U.S. airlines include:
+
+  1\) Alaska Airlines
+
+  2\) United Airlines
+
+  3\) American Airlines
+
+  4\) Delta Airlines
+
+- **Offset Emissions**
+
+  If the trip is unavoidable, be sure to offset emissions using a trusted provider (see **Section 4**).
+
+**Pledge Tiers**
+
+## Based on feedback from an IBES faculty survey, our team developed a range of pledge tiers to reflect the varying levels of commitment to emissions reduction expressed by respondents. 
+
+#### **Strategy 1: Reducing Flights**
+
+| Tier | Pledge | Avg Emissions Reduced |
+| :---- | :---- | :---- |
+| **Bronze** | Reduce 1 short-haul round-trip per year | 132 lbs CO₂ |
+| **Silver** | Reduce 1 domestic round-trip per year | 794 lbs CO₂ |
+| **Gold** | Reduce 1 international round-trip per year | 4,695 lbs CO₂ |
+
+#### **Strategy 2: Alternative Transport**
+
+| Tier | Pledge | Avg Emissions Reduced |
+| :---- | :---- | :---- |
+| **Bronze** | Replace 1 short-haul round-trip with a bus | 22 lbs CO₂ |
+| **Silver** | Replace 1 short-haul round-trip with a carpool | 55 \- 101 lbs CO₂ *\*Depending on \# people in carpool* |
+| **Gold** | Replace 1 short-haul round-trip with a train  | 88 lbs CO₂ |
+
+#### **Strategy 3: Offsetting**
+
+| Tier | Pledge | Avg Emissions Reduced |
+| :---- | :---- | :---- |
+| **Bronze** | Offset 1 short-haul round-trip per year | 132 lbs CO₂ |
+| **Silver** | Offset 1 domestic round-trip per year | 794 lbs CO₂ |
+| **Gold** | Offset 1 international round-trip per year | 4,695 lbs CO₂ |
+
+Faculty are encouraged to scale their pledges however they like to match their travel habits. From small, single-trip changes to broader commitments across travel behavior, every change makes an impact on your carbon footprint.  
+On the low end, if just 15 IBES faculty members pledge to either reduce or offset **1 domestic round-trip per year**, we can cut out almost **12,000 lbs of emissions**— equivalent to taking **one gas-powered car off the road each year.**  
+For a more ambitious example, consider all 25 IBES faculty members pledging to reduce **1 domestic round-trip per year,** as well as 5 faculty members pledging to reduce **1 international round-trip a year**. That comes out to **43,000 lbs CO2** reduced annually: equivalent to taking **5 gas-powered cars off the road per year.**  
+For faculty who did not get a chance to fill out our google form, or for those who wish to make an official pledge, please fill out this brief [Google Form](https://docs.google.com/forms/d/e/1FAIpQLSdZ07znDJjt_vg3LtKUrF-gi6aQkt0yAi67m7hvtBVa_Gen-g/viewform?usp=sharing). 
+
+***Thank you for taking the time to engage with this guide. Your thoughtful decisions and collective action are essential to helping IBES lead the way in sustainable academic travel\!***
+
+[^1]: ​Skiles et al., 2022
+
+[^2]: Calculated using Carbonfootprint.com
+
+[^3]: CO₂ emissions per payload kilometer are calculated for individual flights based on aircraft and engine type, capacity, and load factors, then compared to the most efficient flight scenario as defined by the International Civil Aviation Organization (ICAO). Each city pair is scored for efficiency, with the best scenario assigned 100 points and others rated accordingly. These scores are averaged across all routes flown by each airline to produce a global efficiency score, which is used to rank airlines. The Airline Efficiency Index (AAI) uses the ICAO CO₂ method, with a ±1.5 point accuracy at a 95% confidence level.`;
 </script>
 
 <main>
   <header class="header">
-    <h1>Bears On The Ground</h1>
+    <div class="header-content">
+      <img src="/airplane-logo.png" alt="Airplane Logo" class="logo" />
+      <h1>Bears On The Ground</h1>
+    </div>
   </header>
 
   <div class="container">
@@ -120,6 +285,59 @@ To put that in perspective using EPA emissions estimates: **just one internation
     min-height: 100vh;
   }
 
+  .header-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .logo {
+    height: 40px;
+    width: auto;
+  }
+
+  .header {
+    background-color: var(--dark);
+    color: var(--white);
+    padding: 1rem;
+  }
+
+  .header h1 {
+    color: var(--primary);
+    margin: 0;
+    font-size: 2.5rem;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  .tab-container {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .tab {
+    padding: 0.5rem 1rem;
+    background-color: var(--secondary);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: var(--dark);
+    font-weight: bold;
+  }
+
+  .tab.active {
+    background-color: var(--primary);
+    color: var(--white);
+  }
+
   .edit-controls {
     text-align: right;
     margin-bottom: 1rem;
@@ -153,7 +371,6 @@ To put that in perspective using EPA emissions estimates: **just one internation
     color: var(--dark);
   }
 
-  /* Enhanced markdown styling */
   :global(.markdown-content) {
     font-size: 16px;
     line-height: 1.6;
