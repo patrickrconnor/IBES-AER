@@ -3,7 +3,6 @@
   import { marked } from 'marked';
 
   let activeTab = 'about';
-  let isEditing = false;
 
   // Configure marked options
   marked.use({
@@ -13,10 +12,6 @@
 
   function setActiveTab(tab) {
     activeTab = tab;
-  }
-
-  function toggleEdit() {
-    isEditing = !isEditing;
   }
 
   let markdownContent = `Bears on the Ground:   
@@ -241,27 +236,13 @@ For faculty who did not get a chance to fill out our google form, or for those w
         class:active={activeTab === 'calculator'} 
         on:click={() => setActiveTab('calculator')}
       >
-        Carbon Calculator
+        Enter Flight Details
       </button>
     </div>
 
     {#if activeTab === 'about'}
       <div class="content markdown-content">
-        <div class="edit-controls">
-          <button class="edit-button" on:click={toggleEdit}>
-            {isEditing ? 'Preview' : 'Edit Content'}
-          </button>
-        </div>
-        
-        {#if isEditing}
-          <textarea 
-            bind:value={markdownContent}
-            class="markdown-editor"
-            placeholder="Enter your markdown content here..."
-          ></textarea>
-        {:else}
-          {@html marked(markdownContent)}
-        {/if}
+        {@html marked(markdownContent)}
       </div>
     {:else if activeTab === 'calculator'}
       <div class="calculator-container">
