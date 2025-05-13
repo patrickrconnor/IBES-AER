@@ -13,6 +13,9 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: web    # Set working directory to web folder
     steps:
       - uses: actions/checkout@v4
 
@@ -29,7 +32,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
-          path: web/dist               # <‑‑ replace if your output is build/
+          path: web/dist           # Keep the full path since this action runs from root
 
   deploy:
     needs: build
