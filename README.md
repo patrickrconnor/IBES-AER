@@ -3,7 +3,6 @@ Bears on the Ground:
 ![Screenshot 2025-05-13 at 10.32.25 AM](https://hackmd.io/_uploads/SJ5-O0lble.png)
 
 
-
 ## **1: Introduction to AERFARE**
 
 This guide is designed to support the IBES faculty’s decision-making around academic travel by providing clear, evidence-based strategies to reduce aviation-related carbon emissions. Whether you're heading to a conference, invited to speak abroad, or considering local collaborations, this resource helps you weigh your options— from **virtual attendance and train routes to carbon offsetting and sustainable flight choices**.  
@@ -31,7 +30,7 @@ Opting for virtual attendance helps avoid emissions entirely— unlike offsettin
 | **Domestic** | Providence ⇄ Chicago (1,600 mi) | 794 lbs CO₂ | \~1,100–1,400 lbs CO₂ |
 | **International** | Providence ⇄ London (5,000 mi) | 4,695 lbs CO₂ | \~3,500–4,700 lbs CO₂ |
 
-To put that in perspective: **just one international trip emits roughly as much CO₂** **as providing electricity to an average American house for 6 months** (EPA, 2020).
+To put that in perspective using EPA emissions estimates: **just one international trip emits roughly as much CO₂** **as providing electricity to an average American home for 6 months**.
 
 ### **Equity and Inclusion Benefits**
 
@@ -64,18 +63,20 @@ Warm regards,
 
 Short-haul flights— typically defined as flights under 500 miles— are among the most carbon-intensive forms of travel per mile. That’s because takeoff and landing, the most fuel-consuming parts of a flight, dominate these brief routes. Flying from Providence to Philadelphia or Washington, D.C. may save time in the air, but the environmental cost is disproportionately high.
 
-Sometimes, alternatives are not necessarily lower-emissions than flights. Calculating emissions for travel by car is especially dependent on the model, fuel mileage, and number of passengers. Here is a comparison for a **300-mile round trip** between Providence (PVD) and NYC for 1 passenger[^2]:
+Alternative ground transport is a good emissions reduction strategy for East Coast travel. However, alternatives are not necessarily lower-emissions than flights. Calculating emissions for travel by car is especially dependent on the model, fuel mileage, and number of passengers. Here is a comparison for a **300-mile round trip** between Providence (PVD) and NYC for 1 passenger[^2]:
 
 | Transportation Method | Emissions | Emissions reduced compared to flying |
 | :---- | :---- | :---- |
 | **Flight** | 132 lbs CO2 | N/A |
 | **Train (Amtrak)** | 44 lbs CO2 | 88 lbs CO2 |
 | **Bus (Coach)** | 110 lbs CO2 | 22 lbs CO2 |
-| **Passenger Vehicle** | 154 lbs | *See Note* |
+| **Average Passenger Vehicle** | 154 lbs CO2 | \-22 lbs CO2 (*See Note*) |
 
 As you can see, across multiple short trips each year, choosing ground alternatives can easily reduce **hundreds of pounds of emissions per person**. For faculty flying multiple times a semester, these savings scale quickly.
 
-NOTE: Passenger vehicles, on average, can often emit more CO2 per mile than a flight if driving alone. However, carpooling with even 1 other person to a work-related event can drastically reduce your emissions. Using the PVD → NYC round-trip example, **carpooling with 1 other person would reduce 55 lbs CO2 (per person) compared to flying**.
+NOTE: Passenger vehicles, on average, can often emit more CO2  per mile than a flight if driving alone. However, carpooling with even 1 other person to a work-related event can drastically reduce your emissions. Using the PVD → NYC round-trip example, **carpooling with 1 other person would reduce 55 lbs CO2 (per person) compared to flying**.
+
+Consider booking your travel with [Amtrak](https://www.amtrak.com/home.html), [Peter Pan Bus Lines](https://peterpanbus.com/), or [Greyhound](https://www.greyhound.com/). These companies provide travel from Providence to over a hundred destinations across the East Coast, often at much lower prices than short-haul flights.
 
 ## 
 
@@ -85,7 +86,7 @@ Even when travel is necessary, the environmental impact doesn’t have to go unc
 
 ### **What Is Carbon Offsetting?**
 
-When you buy an offset credit, you're funding a project— such as forest conservation, clean cookstoves, or renewable energy— that avoids or removes a certain amount of CO₂. Typically, 1 offset \= 1 ton of CO₂ reduced or avoided.
+When you buy an offset credit, you're funding a project— such as forest conservation, clean cookstoves, or renewable energy— that avoids or removes a certain amount of CO₂. Typically, **1 offset \= 1 ton of CO₂ reduced or avoided.**
 
 Offsets don’t erase the emissions from flying, but they can neutralize their net climate impact when applied responsibly. To be effective, offsets must be verified by a reputable third party and demonstrate additionality. That is, the reductions wouldn’t have occurred without the offset funding.
 
@@ -113,9 +114,9 @@ Below are average offset costs by flight type from each of these resources. Note
 |  | Average Cost of Offsetting 1 Round-Trip |  |  |
 | :---- | ----- | :---- | :---- |
 | **Flight Category** | **Climate Impact Partners** | **Climate Trade** | **Wren** |
-| **Short-Haul** | $0.37 \- $1.50 | $0.025 \- $23.80 | $1.70 \- $4.90 |
-| **Domestic** | $2.23 \- $9.00 | $0.15 \- $143.10 | $9.90 \- $15.60 |
-| **International** | $13.20 \- $53.20 | $0.88 \- $846.30 | $58.70- $59.40 |
+| **Short-Haul** | $0.50 \- $1.50 | $0.50 \- $24.00 | $1.70 \- $4.90 |
+| **Domestic** | $2.30 \- $9.00 | $2.50 \- $140.00 | $9.90 \- $16.00 |
+| **International** | $13.20 \- $53.00 | $15.00 \- $850.00 | $58.70- $92.00 |
 
 ## **5: Unavoidable Flights and Pledges**
 
@@ -126,21 +127,35 @@ If you must fly, the following practices can significantly reduce the carbon foo
 
 - **Fly Economy Class**
 
-  Business class can emit up to 3× more CO₂ emissions per passenger than economy. This is primarily because business class seats occupy more space and are heavier, reducing the total number of passengers an aircraft can carry. Consequently, the aircraft’s emissions are distributed among fewer individuals, increasing the per-passenger carbon footprint.
+  Business class can emit up to 3x more CO₂ emissions per passenger than economy. This is primarily because business class seats occupy more space and are heavier, reducing the total number of passengers an aircraft can carry. Consequently, the aircraft’s emissions are distributed among fewer individuals, increasing the per-passenger carbon footprint.
 
 - **Choose Non-Stop Flights When Possible**
 
-  Takeoff and landing are the most fuel-intensive parts of a flight. Direct flights usually emit less than multi-leg itineraries.
+  Takeoff and landing are the most fuel-intensive parts of a flight. Direct flights usually emit less than multi-leg itineraries. 
 
-  \[Offer comparison flights\]
+  For example, Boston ⇄ Paris round trip: 
+
+  Non-stop trip emits 3,284 lbs CO2
+
+  Multi-leg trip (stop in London) emits over 4,000 lbs CO2 
+
+  By booking all your trips non-stop, you can reduce 100s of lbs of CO2 from your travel footprint.
 
 - **Use Lower-Emission Airlines**
 
-  Some airlines prioritize newer, fuel-efficient aircraft, sustainable aviation fuels (SAFs), and offset programs. You can check airline sustainability rankings through tools like [Atmosfair Airline Index](https://www.atmosfair.de/wp-content/uploads/atmosfair-aai2024-ranking-background-final.pdf).[^3] Some of the notable ranked U.S. airlines include: 1\) Alaska Airlines, 2\) United Airlines, 3\) American Airlines, 4\) Delta Air Lines.
+  Some airlines prioritize newer, fuel-efficient aircraft, sustainable aviation fuels (SAFs), and offset programs. You can check airline sustainability rankings through tools like [Atmosfair Airline Index](https://www.atmosfair.de/wp-content/uploads/atmosfair-aai2024-ranking-background-final.pdf).[^3] Some of the notably sustainable U.S. airlines include:
+
+  1\) Alaska Airlines
+
+  2\) United Airlines
+
+  3\) American Airlines
+
+  4\) Delta Airlines
 
 - **Offset Emissions**
 
-  If the trip is unavoidable, be sure to offset emissions using a trusted provider (see Section 4).
+  If the trip is unavoidable, be sure to offset emissions using a trusted provider (see **Section 4**).
 
 **Pledge Tiers**
 
@@ -159,7 +174,7 @@ If you must fly, the following practices can significantly reduce the carbon foo
 | Tier | Pledge | Avg Emissions Reduced |
 | :---- | :---- | :---- |
 | **Bronze** | Replace 1 short-haul round-trip with a bus | 22 lbs CO₂ |
-| **Silver** | Replace 1 short-haul round-trip with a 2-person carpool | 55 lbs CO₂ |
+| **Silver** | Replace 1 short-haul round-trip with a carpool | 55 \- 101 lbs CO₂ *\*Depending on \# people in carpool* |
 | **Gold** | Replace 1 short-haul round-trip with a train  | 88 lbs CO₂ |
 
 #### **Strategy 3: Offsetting**
@@ -172,7 +187,10 @@ If you must fly, the following practices can significantly reduce the carbon foo
 
 Faculty are encouraged to scale their pledges however they like to match their travel habits. From small, single-trip changes to broader commitments across travel behavior, every change makes an impact on your carbon footprint.  
 On the low end, if just 15 IBES faculty members pledge to either reduce or offset **1 domestic round-trip per year**, we can cut out almost **12,000 lbs of emissions**— equivalent to taking **one gas-powered car off the road each year.**  
-For a more ambitious example, consider all 25 IBES faculty members pledging to reduce **1 domestic round-trip per year,** as well as 5 faculty members pledging to reduce **1 international round-trip a year**. That comes out to **43,000 lbs CO2** reduced annually: equivalent to taking **5 gas-powered cars off the road per year.**
+For a more ambitious example, consider all 25 IBES faculty members pledging to reduce **1 domestic round-trip per year,** as well as 5 faculty members pledging to reduce **1 international round-trip a year**. That comes out to **43,000 lbs CO2** reduced annually: equivalent to taking **5 gas-powered cars off the road per year.**  
+For faculty who did not get a chance to fill out our google form, or for those who wish to make an official pledge, please fill out this brief [Google Form](https://docs.google.com/forms/d/e/1FAIpQLSdZ07znDJjt_vg3LtKUrF-gi6aQkt0yAi67m7hvtBVa_Gen-g/viewform?usp=sharing). 
+
+***Thank you for taking the time to engage with this guide. Your thoughtful decisions and collective action are essential to helping IBES lead the way in sustainable academic travel\!***
 
 [^1]: ​Skiles et al., 2022
 
