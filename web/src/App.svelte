@@ -3,10 +3,7 @@
   import { marked } from 'marked';
 
   let activeTab = 'about';
-  let markdownContent = '';
-
-  // Temporary content until we properly fetch the README
-  markdownContent = `# Bears On The Ground
+  let markdownContent = `# Bears On The Ground
 
 Welcome to our initiative to track and reduce our carbon footprint. This tool helps you:
 
@@ -16,8 +13,14 @@ Welcome to our initiative to track and reduce our carbon footprint. This tool he
 
 More detailed documentation coming soon.`;
 
+  let isEditing = false;
+
   function setActiveTab(tab) {
     activeTab = tab;
+  }
+
+  function toggleEdit() {
+    isEditing = !isEditing;
   }
 </script>
 
@@ -46,7 +49,21 @@ More detailed documentation coming soon.`;
 
     {#if activeTab === 'about'}
       <div class="content markdown-content">
-        {@html marked(markdownContent)}
+        <div class="edit-controls">
+          <button class="edit-button" on:click={toggleEdit}>
+            {isEditing ? 'Preview' : 'Edit Content'}
+          </button>
+        </div>
+        
+        {#if isEditing}
+          <textarea 
+            bind:value={markdownContent}
+            class="markdown-editor"
+            placeholder="Enter your markdown content here..."
+          ></textarea>
+        {:else}
+          {@html marked(markdownContent)}
+        {/if}
       </div>
     {:else if activeTab === 'calculator'}
       <div class="calculator-container">
@@ -58,7 +75,7 @@ More detailed documentation coming soon.`;
           marginwidth="0" 
           marginheight="0" 
           scrolling="no" 
-          src="https://calculator.carbonfootprint.com/calculator.aspx"
+          src="https://calculator.carbonfootprint.com/calculator.aspx?c=flight"
         ></iframe>
       </div>
     {/if}
@@ -68,5 +85,38 @@ More detailed documentation coming soon.`;
 <style>
   main {
     min-height: 100vh;
+  }
+
+  .edit-controls {
+    text-align: right;
+    margin-bottom: 1rem;
+  }
+
+  .edit-button {
+    background-color: var(--dark);
+    color: var(--white);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+
+  .edit-button:hover {
+    background-color: var(--primary);
+  }
+
+  .markdown-editor {
+    width: 100%;
+    min-height: 400px;
+    padding: 1rem;
+    font-family: monospace;
+    font-size: 14px;
+    line-height: 1.6;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    background-color: #f8f8f8;
+    color: var(--dark);
   }
 </style>
