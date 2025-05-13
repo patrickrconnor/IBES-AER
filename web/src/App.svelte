@@ -14,28 +14,30 @@
     activeTab = tab;
   }
 
-  let markdownContent = `Bears on the Ground:   
+  let markdownContent = `# Bears on the Ground:   
 **Aviation Emissions Reduction Framework for Academic and Research Expeditions (AERFARE)**
 ![Screenshot 2025-05-13 at 10.32.25 AM](https://hackmd.io/_uploads/SJ5-O0lble.png)
 
-## **1: Introduction to AERFARE**
+## 1: Introduction to AERFARE
 
 This guide is designed to support the IBES faculty's decision-making around academic travel by providing clear, evidence-based strategies to reduce aviation-related carbon emissions. Whether you're heading to a conference, invited to speak abroad, or considering local collaborations, this resource helps you weigh your options— from **virtual attendance and train routes to carbon offsetting and sustainable flight choices**.  
+
 We recognize that travel is a vital part of your research and professional engagement. This framework doesn't aim to restrict your mobility; rather, it empowers you with tools to make informed, climate-conscious choices that align with IBES's commitment to environmental leadership.  
+
 Every decision, no matter how small, can help reduce our collective footprint. *Let's lead by example.*
 
 **How AERFARE Works:**  
 Before you book a work-related flight, go through the flowchart on the cover page of this packet. Our decision tree will direct you to resources that can be used to assess the necessity of your trip, shift to a lower-emissions travel alternative, or offset your flight.  
-Our team has spent the semester researching sustainable travel practices and calculating the emissions of flight routes common to IBES faculty. We hope this guide offers you a better understanding of your aviation emissions and encourages you to become a partner in reducing IBES's carbon footprint.  
+
+Our team has spent the semester researching sustainable travel practices and calculating emissions of flight routes common to IBES faculty. We hope this guide offers you a better understanding of your aviation emissions and encourages you to become a partner in reducing IBES's carbon footprint.  
+
 As our project progresses, we aim to collect emissions reduction pledges from faculty and reduce a minimum of **10,000 lbs of CO2** associated with the department's aviation.
 
-## 
-
-## **2: Virtual Attendance and "Opting Out"**
+## 2: Virtual Attendance and "Opting Out"
 
 In recent years, virtual participation in conferences, meetings, and guest lectures has become a widely accepted and often preferred alternative to in-person travel. Platforms like Zoom have not only made remote participation technically seamless but have also expanded access to academic engagement across geographic and financial barriers
 
-### **Why Choose Virtual?**
+### Why Choose Virtual?
 
 Opting for virtual attendance helps avoid emissions entirely— unlike offsetting, which mitigates impact after the fact. Consider the following carbon savings from just one avoided round trip:
 
@@ -47,11 +49,11 @@ Opting for virtual attendance helps avoid emissions entirely— unlike offsettin
 
 To put that in perspective using EPA emissions estimates: **just one international trip emits roughly as much CO₂** **as providing electricity to an average American home for 6 months**.
 
-### **Equity and Inclusion Benefits**
+### Equity and Inclusion Benefits
 
 Encouraging virtual attendance also supports faculty who face barriers to frequent travel— whether due to caregiving responsibilities, health constraints, or lack of visa access. Studies show that virtual conferences increase participation from early-career researchers, women, and scholars from underrepresented regions.[^1] By normalizing virtual alternatives, IBES promotes an academic culture rooted in equity, accessibility, and sustainability.
 
-### **"Opt Out" When Reasonable**
+### "Opt Out" When Reasonable
 
 Faculty are encouraged to assess whether physical attendance is truly necessary. In cases where the professional benefits of a trip can be achieved virtually, we recommend formally requesting to attend remotely. Some funding agencies and conference organizers may still default to in-person expectations, but many are increasingly flexible if asked.
 
@@ -74,7 +76,7 @@ Warm regards,
  \[Your Title/Position\]  
  Institute at Brown for Environment and Society
 
-## **3: Short-haul Flight Alternatives**
+## 3: Short-haul Flight Alternatives
 
 Short-haul flights— typically defined as flights under 500 miles— are among the most carbon-intensive forms of travel per mile. That's because takeoff and landing, the most fuel-consuming parts of a flight, dominate these brief routes. Flying from Providence to Philadelphia or Washington, D.C. may save time in the air, but the environmental cost is disproportionately high.
 
@@ -93,13 +95,11 @@ NOTE: Passenger vehicles, on average, can often emit more CO2  per mile than a f
 
 Consider booking your travel with [Amtrak](https://www.amtrak.com/home.html), [Peter Pan Bus Lines](https://peterpanbus.com/), or [Greyhound](https://www.greyhound.com/). These companies provide travel from Providence to over a hundred destinations across the East Coast, often at much lower prices than short-haul flights.
 
-## 
-
-## **4: Carbon Offsetting**
+## 4: Carbon Offsetting
 
 Even when travel is necessary, the environmental impact doesn't have to go unchecked. Carbon offsetting allows individuals or institutions to invest in projects that reduce or remove greenhouse gases from the atmosphere—compensating for emissions from flights or other activities.
 
-### **What Is Carbon Offsetting?**
+### What Is Carbon Offsetting?
 
 When you buy an offset credit, you're funding a project— such as forest conservation, clean cookstoves, or renewable energy— that avoids or removes a certain amount of CO₂. Typically, **1 offset \= 1 ton of CO₂ reduced or avoided.**
 
@@ -117,14 +117,16 @@ Below are three trusted offset services that meet strong verification standards 
 
 **Cost of Purchasing Offsets**
 
-Below are average offset costs by flight type from each of these resources. Note that one metric tonne of carbon accounts for one carbon credit. The calculation emissions for each category represent the selected routes below calculated by CarbonFootprint.com's flight calculator using economy seating and including radiative forcing: 
+Below are average offset costs by flight type from each of these resources. Note that one metric tonne of carbon accounts for one carbon credit. The calculation emissions for each category represent the selected routes below calculated by CarbonFootprint.com's flight calculator using economy seating and including radiative forcing:
 
-* **Short-Haul**  
-  * Providence ⇄ New York: \~300 miles round trip \= 132 lbs CO₂  
-* **Domestic**  
-  * Providence ⇄ Chicago: \~1,600 miles round trip \= 794 lbs CO₂  
-* **International**  
-  * Providence ⇄ London: \~5,000 miles round trip \= 4695 lbs CO₂
+### Short-Haul
+Providence ⇄ New York: ~300 miles round trip = 132 lbs CO₂
+
+### Domestic
+Providence ⇄ Chicago: ~1,600 miles round trip = 794 lbs CO₂
+
+### International
+Providence ⇄ London: ~5,000 miles round trip = 4695 lbs CO₂
 
 |  | Average Cost of Offsetting 1 Round-Trip |  |  |
 | :---- | ----- | :---- | :---- |
@@ -133,44 +135,43 @@ Below are average offset costs by flight type from each of these resources. Note
 | **Domestic** | $2.30 \- $9.00 | $2.50 \- $140.00 | $9.90 \- $16.00 |
 | **International** | $13.20 \- $53.00 | $15.00 \- $850.00 | $58.70- $92.00 |
 
-## **5: Unavoidable Flights and Pledges**
+## 5: Unavoidable Flights and Pledges
 
 For academic travel that is truly essential, there are still ways to minimize the climate impact of flights when they can't be avoided.
 
 **Tips for Lower-Emission Flying**  
 If you must fly, the following practices can significantly reduce the carbon footprint of your trip:
 
-- **Fly Economy Class**
+### Fly Economy Class
 
-  Business class can emit up to 3x more CO₂ emissions per passenger than economy. This is primarily because business class seats occupy more space and are heavier, reducing the total number of passengers an aircraft can carry. Consequently, the aircraft's emissions are distributed among fewer individuals, increasing the per-passenger carbon footprint.
+Business class can emit up to 3x more CO₂ emissions per passenger than economy. This is primarily because business class seats occupy more space and are heavier, reducing the total number of passengers an aircraft can carry. Consequently, the aircraft's emissions are distributed among fewer individuals, increasing the per-passenger carbon footprint.
 
-- **Choose Non-Stop Flights When Possible**
+### Choose Non-Stop Flights When Possible
 
-  Takeoff and landing are the most fuel-intensive parts of a flight. Direct flights usually emit less than multi-leg itineraries. 
+Takeoff and landing are the most fuel-intensive parts of a flight. Direct flights usually emit less than multi-leg itineraries. 
 
-  For example, Boston ⇄ Paris round trip: 
+For example, Boston ⇄ Paris round trip: 
 
-  Non-stop trip emits 3,284 lbs CO2
+Non-stop trip emits 3,284 lbs CO2
 
-  Multi-leg trip (stop in London) emits over 4,000 lbs CO2 
+Multi-leg trip (stop in London) emits over 4,000 lbs CO2 
 
-  By booking all your trips non-stop, you can reduce 100s of lbs of CO2 from your travel footprint.
+By booking all your trips non-stop, you can reduce 100s of lbs of CO2 from your travel footprint.
 
-- **Use Lower-Emission Airlines**
+### Use Lower-Emission Airlines
 
-  Some airlines prioritize newer, fuel-efficient aircraft, sustainable aviation fuels (SAFs), and offset programs. You can check airline sustainability rankings through tools like [Atmosfair Airline Index](https://www.atmosfair.de/wp-content/uploads/atmosfair-aai2024-ranking-background-final.pdf).[^3] Some of the notably sustainable U.S. airlines include:
+Some airlines prioritize newer, fuel-efficient aircraft, sustainable aviation fuels (SAFs), and offset programs. You can check airline sustainability rankings through tools like [Atmosfair Airline Index](https://www.atmosfair.de/wp-content/uploads/atmosfair-aai2024-ranking-background-final.pdf).[^3]
 
-  1\) Alaska Airlines
+Some of the notably sustainable U.S. airlines include:
 
-  2\) United Airlines
+1. Alaska Airlines
+2. United Airlines
+3. American Airlines
+4. Delta Airlines
 
-  3\) American Airlines
+### Offset Emissions
 
-  4\) Delta Airlines
-
-- **Offset Emissions**
-
-  If the trip is unavoidable, be sure to offset emissions using a trusted provider (see **Section 4**).
+If the trip is unavoidable, be sure to offset emissions using a trusted provider (see **Section 4**).
 
 **Pledge Tiers**
 
