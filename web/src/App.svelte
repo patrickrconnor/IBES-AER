@@ -356,12 +356,14 @@ For faculty who did not get a chance to fill out our google form, or for those w
   :global(.markdown-content) {
     font-size: 16px;
     line-height: 1.6;
+    text-align: left;
   }
 
   :global(.markdown-content h1) {
     color: var(--dark);
     font-size: 2.5em;
     margin-bottom: 1em;
+    text-align: left;
   }
 
   :global(.markdown-content h2) {
@@ -369,22 +371,26 @@ For faculty who did not get a chance to fill out our google form, or for those w
     font-size: 2em;
     margin-top: 1.5em;
     margin-bottom: 0.5em;
+    text-align: left;
   }
 
   :global(.markdown-content h3) {
     color: var(--dark);
     font-size: 1.5em;
     margin-top: 1.2em;
+    text-align: left;
   }
 
   :global(.markdown-content p) {
     margin-bottom: 1em;
+    text-align: left;
   }
 
   :global(.markdown-content table) {
     width: 100%;
     border-collapse: collapse;
     margin: 1em 0;
+    text-align: left;
   }
 
   :global(.markdown-content th),
@@ -406,8 +412,9 @@ For faculty who did not get a chance to fill out our google form, or for those w
   :global(.markdown-content img) {
     max-width: 100%;
     height: auto;
-    margin: 1em 0;
+    margin: 1em auto;
     border-radius: 4px;
+    display: block;
   }
 
   :global(.markdown-content blockquote) {
@@ -415,6 +422,7 @@ For faculty who did not get a chance to fill out our google form, or for those w
     padding-left: 1em;
     margin: 1em 0;
     color: #666;
+    text-align: left;
   }
 
   :global(.markdown-content code) {
@@ -431,5 +439,17 @@ For faculty who did not get a chance to fill out our google form, or for those w
 
   :global(.markdown-content a:hover) {
     color: var(--primary);
+  }
+
+  :global(.markdown-content ul),
+  :global(.markdown-content ol) {
+    text-align: left;
+    padding-left: 2em;
+    margin-bottom: 1em;
+  }
+
+  :global(.markdown-content li) {
+    text-align: left;
+    margin-bottom: 0.5em;
   }
 </style>
