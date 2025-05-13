@@ -5,10 +5,16 @@
   let activeTab = 'about';
   let markdownContent = '';
 
-  onMount(async () => {
-    const response = await fetch('../README.md');
-    markdownContent = await response.text();
-  });
+  // Temporary content until we properly fetch the README
+  markdownContent = `# Bears On The Ground
+
+Welcome to our initiative to track and reduce our carbon footprint. This tool helps you:
+
+- Calculate your carbon footprint
+- Track your environmental impact
+- Make informed decisions about travel and daily activities
+
+More detailed documentation coming soon.`;
 
   function setActiveTab(tab) {
     activeTab = tab;
