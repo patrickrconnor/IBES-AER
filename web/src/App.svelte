@@ -69,6 +69,10 @@
     }
   }
 
+  function goBack() {
+    showVerifyCalculator = false;
+  }
+
   let markdownContent = `# Bears on the Ground:   
 **Aviation Emissions Reduction Framework for Academic and Research Expeditions (AERFARE)**
 ![Screenshot 2025-05-13 at 10.32.25 AM](https://hackmd.io/_uploads/SJ5-O0lble.png)
@@ -279,7 +283,10 @@ For faculty who did not get a chance to fill out our google form, or for those w
   </header>
 
   {#if showVerifyCalculator}
-    <VerifyCalculator />
+    <div class="container">
+      <button class="back-button" on:click={goBack}>← Back to Main Page</button>
+      <VerifyCalculator />
+    </div>
   {:else}
     <div class="container">
       <div class="tab-container">
@@ -662,6 +669,25 @@ For faculty who did not get a chance to fill out our google form, or for those w
   }
 
   .verify-link a:hover {
+    background-color: var(--primary);
+  }
+
+  .back-button {
+    margin-bottom: 2rem;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--dark);
+    color: var(--white);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: background-color 0.2s;
+  }
+
+  .back-button:hover {
     background-color: var(--primary);
   }
 </style>
