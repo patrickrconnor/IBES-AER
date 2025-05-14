@@ -3,6 +3,13 @@
   import { marked } from 'marked';
 
   let activeTab = 'about';
+  let from = '';
+  let to = '';
+  let passengers = 1;
+  let flightClass = 'economy';
+  let results = null;
+  let loading = false;
+  let error = null;
 
   // Configure marked options
   marked.use({
@@ -12,6 +19,37 @@
 
   function setActiveTab(tab) {
     activeTab = tab;
+  }
+
+  async function calculateEmissions() {
+    loading = true;
+    error = null;
+    
+    try {
+      // For now, we'll just simulate the API call with mock data
+      // In production, this would be replaced with the actual Climatiq API call
+      await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate API delay
+      
+      results = {
+        co2e: 794,
+        co2e_unit: "kg",
+        legs: [{
+          activity_data: {
+            activity_value: 1600,
+            activity_unit: "passenger-km"
+          },
+          constituent_gases: {
+            co2: 788,
+            ch4: 0.002,
+            n2o: 0.015
+          }
+        }]
+      };
+    } catch (err) {
+      error = 'Failed to calculate emissions. Please try again.';
+    } finally {
+      loading = false;
+    }
   }
 
   let markdownContent = `# Bears on the Ground:   
@@ -239,6 +277,13 @@ For faculty who did not get a chance to fill out our google form, or for those w
       >
         Enter Flight Details
       </button>
+      <button 
+        class="tab" 
+        class:active={activeTab === 'custom-calculator'} 
+        on:click={() => setActiveTab('custom-calculator')}
+      >
+        Custom Calculator
+      </button>
     </div>
 
     {#if activeTab === 'about'}
@@ -257,6 +302,84 @@ For faculty who did not get a chance to fill out our google form, or for those w
           scrolling="no" 
           src="https://calculator.carbonfootprint.com/calculator.aspx?c=flight"
         ></iframe>
+      </div>
+    {:else if activeTab === 'custom-calculator'}
+      <div class="calculator-form">
+        <div class="form-group">
+          <label for="from">From (Airport Code)</label>
+          <input 
+            id="from"
+            bind:value={from}
+            placeholder="e.g. PVD"
+            class="input"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="to">To (Airport Code)</label>
+          <input 
+            id="to"
+            bind:value={to}
+            placeholder="e.g. JFK"
+            class="input"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="passengers">Number of Passengers</label>
+          <input 
+            id="passengers"
+            type="number"
+            min="1"
+            bind:value={passengers}
+            class="input"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="class">Flight Class</label>
+          <select id="class" bind:value={flightClass} class="select">
+            <option value="economy">Economy</option>
+            <option value="business">Business</option>
+            <option value="first">First</option>
+          </select>
+        </div>
+
+        <button 
+          on:click={calculateEmissions}
+          disabled={loading}
+          class="calculate-button"
+        >
+          {loading ? 'Calculating...' : 'Calculate Emissions'}
+        </button>
+
+        {#if error}
+          <div class="error">{error}</div>
+        {/if}
+
+        {#if results}
+          <div class="results">
+            <h3>Flight Emissions</h3>
+            <div class="result-item">
+              <span>Total CO2e:</span>
+              <span>{results.co2e} {results.co2e_unit}</span>
+            </div>
+            
+            <div class="result-details">
+              <h4>Breakdown:</h4>
+              <ul>
+                {#each results.legs as leg}
+                  <li>
+                    <div>Flight Distance: {leg.activity_data.activity_value} {leg.activity_data.activity_unit}</div>
+                    <div>CO2: {leg.constituent_gases.co2} kg</div>
+                    <div>CH4: {leg.constituent_gases.ch4} kg</div>
+                    <div>N2O: {leg.constituent_gases.n2o} kg</div>
+                  </li>
+                {/each}
+              </ul>
+            </div>
+          </div>
+        {/if}
       </div>
     {/if}
   </div>
@@ -451,5 +574,90 @@ For faculty who did not get a chance to fill out our google form, or for those w
   :global(.markdown-content li) {
     text-align: left;
     margin-bottom: 0.5em;
+  }
+
+  .calculator-form {
+    background-color: var(--secondary);
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--dark);
+    font-weight: bold;
+  }
+
+  .input, .select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid var(--dark);
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: white;
+  }
+
+  .calculate-button {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+
+  .calculate-button:hover {
+    background-color: var(--dark);
+  }
+
+  .calculate-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+
+  .error {
+    color: red;
+    margin-top: 1rem;
+  }
+
+  .results {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: white;
+    border-radius: 4px;
+  }
+
+  .result-item {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.5rem 0;
+    font-size: 1.2rem;
+  }
+
+  .result-details {
+    margin-top: 1.5rem;
+  }
+
+  .result-details ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .result-details li {
+    padding: 1rem;
+    background-color: var(--secondary);
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
   }
 </style>
