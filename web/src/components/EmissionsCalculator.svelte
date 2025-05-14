@@ -1,4 +1,6 @@
 <script>
+  import TransportAlternatives from './TransportAlternatives.svelte';
+  
   let calculatorMode = 'specific'; // 'specific' or 'distance'
   let from = '';
   let to = '';
@@ -260,6 +262,14 @@
           </ul>
         {/if}
       </div>
+
+      {#if calculatorMode === 'specific'}
+        <TransportAlternatives 
+          from={from} 
+          to={to} 
+          distance={results.distance}
+        />
+      {/if}
     </div>
   {/if}
 </div>
