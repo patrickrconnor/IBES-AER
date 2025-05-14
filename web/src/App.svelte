@@ -2,6 +2,8 @@
   import { onMount } from 'svelte';
   import { marked } from 'marked';
   import VerifyCalculator from './components/VerifyCalculator.svelte';
+  import PledgeTab from './components/PledgeTab.svelte';
+  import OffsetPricing from './components/OffsetPricing.svelte';
 
   let activeTab = 'about';
   let showVerifyCalculator = false;
@@ -52,6 +54,12 @@
           }
         }]
       };
+
+      // Update pledge progress in localStorage
+      const flightEmissions = results.co2e * 2.20462; // Convert kg to lbs
+      const currentProgress = JSON.parse(localStorage.getItem('emissionsProgress') || '0');
+      localStorage.setItem('emissionsProgress', JSON.stringify(currentProgress + flightEmissions));
+
     } catch (err) {
       error = 'Failed to calculate emissions. Please try again.';
     } finally {
@@ -287,6 +295,13 @@ For faculty who did not get a chance to fill out our google form, or for those w
         >
           Enter Flight Details
         </button>
+        <button 
+          class="tab" 
+          class:active={activeTab === 'pledge'} 
+          on:click={() => setActiveTab('pledge')}
+        >
+          Make a Pledge
+        </button>
       </div>
 
       {#if activeTab === 'about'}
@@ -368,6 +383,8 @@ For faculty who did not get a chance to fill out our google form, or for those w
                   {/each}
                 </ul>
               </div>
+
+              <OffsetPricing emissions={results.co2e * 2.20462} />
             </div>
           {/if}
 
@@ -377,6 +394,8 @@ For faculty who did not get a chance to fill out our google form, or for those w
             </button>
           </div>
         </div>
+      {:else if activeTab === 'pledge'}
+        <PledgeTab />
       {/if}
     </div>
   {/if}
