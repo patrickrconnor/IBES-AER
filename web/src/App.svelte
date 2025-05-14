@@ -268,7 +268,7 @@ For faculty who did not get a chance to fill out our google form, or for those w
         class:active={activeTab === 'about'} 
         on:click={() => setActiveTab('about')}
       >
-        About
+        Our Guide
       </button>
       <button 
         class="tab" 
@@ -276,13 +276,6 @@ For faculty who did not get a chance to fill out our google form, or for those w
         on:click={() => setActiveTab('calculator')}
       >
         Enter Flight Details
-      </button>
-      <button 
-        class="tab" 
-        class:active={activeTab === 'custom-calculator'} 
-        on:click={() => setActiveTab('custom-calculator')}
-      >
-        Custom Calculator
       </button>
     </div>
 
@@ -303,7 +296,7 @@ For faculty who did not get a chance to fill out our google form, or for those w
           src="https://calculator.carbonfootprint.com/calculator.aspx?c=flight"
         ></iframe>
       </div>
-    {:else if activeTab === 'custom-calculator'}
+    
       <div class="calculator-form">
         <div class="form-group">
           <label for="from">From (Airport Code)</label>
@@ -380,6 +373,12 @@ For faculty who did not get a chance to fill out our google form, or for those w
             </div>
           </div>
         {/if}
+
+        <div class="verify-link">
+          <a href="https://calculator.carbonfootprint.com/calculator.aspx?c=flight" target="_blank" rel="noopener noreferrer">
+            Verify your calculations
+          </a>
+        </div>
       </div>
     {/if}
   </div>
@@ -602,6 +601,11 @@ For faculty who did not get a chance to fill out our google form, or for those w
     border-radius: 4px;
     font-size: 1rem;
     background-color: white;
+    color: var(--dark);
+  }
+
+  .input::placeholder {
+    color: #666;
   }
 
   .calculate-button {
@@ -659,5 +663,25 @@ For faculty who did not get a chance to fill out our google form, or for those w
     background-color: var(--secondary);
     border-radius: 4px;
     margin-bottom: 0.5rem;
+  }
+
+  .verify-link {
+    margin-top: 2rem;
+    text-align: center;
+  }
+
+  .verify-link a {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--dark);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.2s;
+  }
+
+  .verify-link a:hover {
+    background-color: var(--primary);
   }
 </style>
