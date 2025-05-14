@@ -320,7 +320,7 @@
 
   .calculator-modes button {
     padding: 0.75rem 1.5rem;
-    background-color: var(--secondary);
+    background-color: #e9ecef;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -358,7 +358,7 @@
 
   .form-group {
     margin-bottom: 1.5rem;
-    max-width: 100%;
+    width: 100%;
   }
 
   label {
@@ -370,7 +370,7 @@
 
   .input, select {
     width: 100%;
-    max-width: 100%;
+    box-sizing: border-box;
     padding: 0.75rem;
     border: 2px solid var(--dark);
     border-radius: 4px;
@@ -404,7 +404,7 @@
     margin-right: 0.5rem;
     margin-bottom: 0.5rem;
     padding: 0.5rem 1rem;
-    background-color: var(--secondary);
+    background-color: #e9ecef;
     border: none;
     border-radius: 4px;
     cursor: pointer;
