@@ -320,13 +320,14 @@
 
   .calculator-modes button {
     padding: 0.75rem 1.5rem;
-    background-color: #e9ecef;
+    background-color: var(--dark);
     border: none;
     border-radius: 4px;
     cursor: pointer;
     font-weight: bold;
     transition: all 0.2s;
     min-width: 150px;
+    color: white;
   }
 
   .calculator-modes button.active {
@@ -404,11 +405,12 @@
     margin-right: 0.5rem;
     margin-bottom: 0.5rem;
     padding: 0.5rem 1rem;
-    background-color: #e9ecef;
+    background-color: var(--dark);
     border: none;
     border-radius: 4px;
     cursor: pointer;
     font-size: 0.9rem;
+    color: white;
   }
 
   .common-distances button:hover {
