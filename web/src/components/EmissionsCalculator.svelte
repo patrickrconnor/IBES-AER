@@ -1,5 +1,6 @@
 <script>
   import TransportAlternatives from './TransportAlternatives.svelte';
+  import TripSummary from './TripSummary.svelte';
   
   let calculatorMode = 'specific'; // 'specific' or 'distance'
   let from = '';
@@ -234,6 +235,32 @@
           </div>
         {/if}
       </div>
+
+      <TripSummary 
+        emissions={results.flight}
+        distance={results.distance}
+        mode={flightClass === 'economy' ? 'flight' : 'premium-flight'}
+        alternatives={[
+          {
+            name: 'Train',
+            emissions: results.train,
+            icon: '🚂',
+            timeDiff: results.trainTimeDiff
+          },
+          {
+            name: 'Bus',
+            emissions: results.bus,
+            icon: '🚌',
+            timeDiff: results.busTimeDiff
+          },
+          {
+            name: 'Carpool',
+            emissions: results.car,
+            icon: '🚗',
+            timeDiff: null
+          }
+        ].filter(alt => alt.emissions < results.flight)}
+      />
 
       <div class="recommendations">
         <h4>Recommendations</h4>
