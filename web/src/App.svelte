@@ -1,8 +1,10 @@
 <script>
   import { onMount } from 'svelte';
   import { marked } from 'marked';
+  import VerifyCalculator from './components/VerifyCalculator.svelte';
 
   let activeTab = 'about';
+  let showVerifyCalculator = false;
   let from = '';
   let to = '';
   let passengers = 1;
@@ -19,6 +21,11 @@
 
   function setActiveTab(tab) {
     activeTab = tab;
+    showVerifyCalculator = false;
+  }
+
+  function showVerification() {
+    showVerifyCalculator = true;
   }
 
   async function calculateEmissions() {
@@ -261,127 +268,118 @@ For faculty who did not get a chance to fill out our google form, or for those w
     </div>
   </header>
 
-  <div class="container">
-    <div class="tab-container">
-      <button 
-        class="tab" 
-        class:active={activeTab === 'about'} 
-        on:click={() => setActiveTab('about')}
-      >
-        Our Guide
-      </button>
-      <button 
-        class="tab" 
-        class:active={activeTab === 'calculator'} 
-        on:click={() => setActiveTab('calculator')}
-      >
-        Enter Flight Details
-      </button>
-    </div>
-
-    {#if activeTab === 'about'}
-      <div class="content markdown-content">
-        {@html marked(markdownContent)}
-      </div>
-    {:else if activeTab === 'calculator'}
-      <div class="calculator-container">
-        <iframe 
-          title="Carbon Calculator"
-          width="100%" 
-          height="750" 
-          frameborder="0" 
-          marginwidth="0" 
-          marginheight="0" 
-          scrolling="no" 
-          src="https://calculator.carbonfootprint.com/calculator.aspx?c=flight"
-        ></iframe>
-      </div>
-    
-      <div class="calculator-form">
-        <div class="form-group">
-          <label for="from">From (Airport Code)</label>
-          <input 
-            id="from"
-            bind:value={from}
-            placeholder="e.g. PVD"
-            class="input"
-          />
-        </div>
-
-        <div class="form-group">
-          <label for="to">To (Airport Code)</label>
-          <input 
-            id="to"
-            bind:value={to}
-            placeholder="e.g. JFK"
-            class="input"
-          />
-        </div>
-
-        <div class="form-group">
-          <label for="passengers">Number of Passengers</label>
-          <input 
-            id="passengers"
-            type="number"
-            min="1"
-            bind:value={passengers}
-            class="input"
-          />
-        </div>
-
-        <div class="form-group">
-          <label for="class">Flight Class</label>
-          <select id="class" bind:value={flightClass} class="select">
-            <option value="economy">Economy</option>
-            <option value="business">Business</option>
-            <option value="first">First</option>
-          </select>
-        </div>
-
+  {#if showVerifyCalculator}
+    <VerifyCalculator />
+  {:else}
+    <div class="container">
+      <div class="tab-container">
         <button 
-          on:click={calculateEmissions}
-          disabled={loading}
-          class="calculate-button"
+          class="tab" 
+          class:active={activeTab === 'about'} 
+          on:click={() => setActiveTab('about')}
         >
-          {loading ? 'Calculating...' : 'Calculate Emissions'}
+          Our Guide
         </button>
-
-        {#if error}
-          <div class="error">{error}</div>
-        {/if}
-
-        {#if results}
-          <div class="results">
-            <h3>Flight Emissions</h3>
-            <div class="result-item">
-              <span>Total CO2e:</span>
-              <span>{results.co2e} {results.co2e_unit}</span>
-            </div>
-            
-            <div class="result-details">
-              <h4>Breakdown:</h4>
-              <ul>
-                {#each results.legs as leg}
-                  <li>
-                    <div>Flight Distance: {leg.activity_data.activity_value} {leg.activity_data.activity_unit}</div>
-                    <div>CO2: {leg.constituent_gases.co2} kg</div>
-                    <div>CH4: {leg.constituent_gases.ch4} kg</div>
-                    <div>N2O: {leg.constituent_gases.n2o} kg</div>
-                  </li>
-                {/each}
-              </ul>
-            </div>
-          </div>
-        {/if}
-
-        <div class="verify-link">
-          <a href="https://calculator.carbonfootprint.com/calculator.aspx?c=flight" target="_blank" rel="noopener noreferrer">
-            Verify your calculations
-          </a>
-        </div>
+        <button 
+          class="tab" 
+          class:active={activeTab === 'calculator'} 
+          on:click={() => setActiveTab('calculator')}
+        >
+          Enter Flight Details
+        </button>
       </div>
-    {/if}
-  </div>
+
+      {#if activeTab === 'about'}
+        <div class="content markdown-content">
+          {@html marked(markdownContent)}
+        </div>
+      {:else if activeTab === 'calculator'}
+        <div class="calculator-form">
+          <div class="form-group">
+            <label for="from">From (Airport Code)</label>
+            <input 
+              id="from"
+              bind:value={from}
+              placeholder="e.g. PVD"
+              class="input"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="to">To (Airport Code)</label>
+            <input 
+              id="to"
+              bind:value={to}
+              placeholder="e.g. JFK"
+              class="input"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="passengers">Number of Passengers</label>
+            <input 
+              id="passengers"
+              type="number"
+              min="1"
+              bind:value={passengers}
+              class="input"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="class">Flight Class</label>
+            <select id="class" bind:value={flightClass} class="select">
+              <option value="economy">Economy</option>
+              <option value="business">Business</option>
+              <option value="first">First</option>
+            </select>
+          </div>
+
+          <button 
+            on:click={calculateEmissions}
+            disabled={loading}
+            class="calculate-button"
+          >
+            {loading ? 'Calculating...' : 'Calculate Emissions'}
+          </button>
+
+          {#if error}
+            <div class="error">{error}</div>
+          {/if}
+
+          {#if results}
+            <div class="results">
+              <h3>Flight Emissions</h3>
+              <div class="result-item">
+                <span>Total CO2e:</span>
+                <span>{results.co2e} {results.co2e_unit}</span>
+              </div>
+              
+              <div class="result-details">
+                <h4>Breakdown:</h4>
+                <ul>
+                  {#each results.legs as leg}
+                    <li>
+                      <div>Flight Distance: {leg.activity_data.activity_value} {leg.activity_data.activity_unit}</div>
+                      <div>CO2: {leg.constituent_gases.co2} kg</div>
+                      <div>CH4: {leg.constituent_gases.ch4} kg</div>
+                      <div>N2O: {leg.constituent_gases.n2o} kg</div>
+                    </li>
+                  {/each}
+                </ul>
+              </div>
+            </div>
+          {/if}
+
+          <div class="verify-link">
+            <button class="verify-button" on:click={showVerification}>
+              Verify your calculations
+            </button>
+          </div>
+        </div>
+      {/if}
+    </div>
+  {/if}
 </main>
 
 <style>
@@ -575,12 +573,29 @@ For faculty who did not get a chance to fill out our google form, or for those w
     margin-bottom: 0.5em;
   }
 
+  .verify-button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--dark);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.2s;
+    border: none;
+    cursor: pointer;
+  }
+
+  .verify-button:hover {
+    background-color: var(--primary);
+  }
+
   .calculator-form {
     background-color: var(--secondary);
     padding: 2rem;
     border-radius: 8px;
     max-width: 600px;
-    margin: 0 auto;
+    margin: 2rem auto;
   }
 
   .form-group {
